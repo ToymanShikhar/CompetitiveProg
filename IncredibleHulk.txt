@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+   int n,k=0;
+   cin>>n;
+   int j=0;
+while(n>0){
+   j=0;
+   int m=n;
+   while(m>0){
+   m=m>>1;
+   j++;
+   }
+   n=n-(1<<(j-1));
+   k++;
+   }
+   cout<<k<<endl;
+	}
+    return 0;
+}

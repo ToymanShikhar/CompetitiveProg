@@ -1,0 +1,41 @@
+from itertools import combinations 
+
+def rSubset(arr, r): 
+
+    # return list of all subsets of length r 
+    # to deal with duplicate subsets use
+    # set(list(combinations(arr, r))) 
+    return list(combinations(arr, r)) 
+
+# Driver Function 
+if name == "main":
+    t=int(input())
+    l=list()
+    b=dict()
+    count=0
+    b['2']=list()
+    b['3']=list()
+    b['5']=list()
+    b['7']=list()
+    for i in range(t):
+        l.append(input())
+    for i in l:
+        if '2' in i:
+            b['2'].append(i)
+        if '3' in i:
+            b['3'].append(i)
+        if '5' in i:
+            b['5'].append(i)
+        if '7' in i:
+            b['7'].append(i)
+    r = 3
+    a=rSubset(b['2'], r)
+    count+=len(a)
+    a=rSubset(b['3'], r)
+    count+=len(a)
+    a=rSubset(b['5'], r)
+    count+=len(a)
+    a=rSubset(b['7'], r)
+    count+=len(a)
+
+    print(count)

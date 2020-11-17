@@ -1,0 +1,19 @@
+#include<iostream>
+#include<cctype>
+using namespace std;
+int main(){
+    char ch;
+    cin>>ch;
+    if(isalpha(ch)!=0){
+        if(isupper(ch)!=0){
+            cout<<"UPPERCASE"<<endl;
+        }
+        else{
+            cout<<"lowercase"<<endl;
+        }
+    }
+    else{
+        cout<<"Invalid"<<endl;
+    }
+    return 0;
+}

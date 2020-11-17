@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int x,y;
+    cin>>x>>y;
+    int max_xor=0;
+        int a=x;
+        int b=x;
+        while(b<=y){
+        int x_or=a^b;
+        if(x_or>max_xor){
+            max_xor=x_or;
+        }
+        b++;
+        }
+        while(a<=b){
+            int x_or=a^b;
+            if(x_or>max_xor){
+            max_xor=x_or;
+            }
+            a++;}
+            cout<<max_xor<<endl;
+            return 0;
+}

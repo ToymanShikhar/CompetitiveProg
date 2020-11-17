@@ -1,0 +1,27 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+void end(char *a,int i,int j){
+    if(i>j){
+        return;
+    }
+    if(a[i]=='x'){
+        for(int k=i;k<j;k++){
+            a[k]=a[k+1];
+        }
+        a[j]='x';
+        end(a,i,j-1);
+        end(a,i+1,j-1);
+        
+    }
+    else{
+    end(a,i+1,j);}
+}
+int main(){
+    char a[1000];
+    cin>>a;
+    int n=strlen(a);
+    end(a,0,n-1);
+    cout<<a<<endl;
+    return 0;
+}

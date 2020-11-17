@@ -1,0 +1,44 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+long long p[1000000];
+long long  prime(long long n){
+    long long cnt=0;
+    memset(p,0,sizeof(p));
+    p[0]=p[1]=0;
+    p[2]=1;
+    for(long long  i=3;i<=n;i+=2){
+        p[i]=1;
+    }
+    for(long long int i=3;i<=n;i+=2){
+        for(long long  j=i*i;j<=n;j+=2*i){
+            p[j]=0;
+    }}
+    
+    if(n>=2){
+    cnt=1;
+}
+   
+for(long long  i=3;i<=n;i+=2){
+    if(p[i]==1){
+        cnt++;
+    }
+}
+
+
+
+   
+
+   
+    
+
+return cnt;}
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+    int a,b;
+    cin>>a>>b;
+    cout<<prime(b)-prime(a-1)<<endl;}
+    return 0;
+}

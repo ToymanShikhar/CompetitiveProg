@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+int main() {
+	int n;
+	cin>>n;
+	while(n--){
+		int m;
+		cin>>m;
+		int ans=0;
+		while(m>0){
+			if((m&1)>0){
+				ans+=1;
+			}
+			m=m>>1;
+}
+cout<<ans<<endl;
+	}
+	return 0;
+}

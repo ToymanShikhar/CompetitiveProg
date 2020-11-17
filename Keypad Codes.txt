@@ -1,0 +1,32 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+char  table[][100] = { " ", "abc", "def", "ghi", "jkl" , "mno", "pqrs" , "tuv", "wxyz" };
+void smart_keypad(char *in,char *out,int i,int j){
+    if(in[i]=='\0'){
+        out[j]='\0';
+        cout<<out<<" ";
+        return;
+    }
+    int digit =in[i]-'0';
+    for(int m=0;table[digit][m]!='\0';m++){
+                out[j]=table[digit][m];
+                smart_keypad(in,out,i+1,j+1);
+         }
+         
+    
+}
+int main(){
+    char a[100];
+    char out[100];
+    cin>>a;
+    int ans=1;
+    for(int i=0;i<strlen(a);i++){
+        int t=a[i]-'0';
+        ans=ans*strlen(table[t]);
+    }
+    smart_keypad(a,out,0,0);
+    cout<<endl<<ans<<endl;
+    
+    return 0;
+}

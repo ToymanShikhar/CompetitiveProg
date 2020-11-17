@@ -1,0 +1,71 @@
+#include<iostream>
+using namespace std;
+class node{
+public:
+    int data;
+    node*next;
+    node(int d){
+        data=d;
+        next=NULL;
+    }
+};
+void insertAtend(node*&head,int x){
+    if(head==NULL){
+        head=new node(x);
+        return;
+    }
+    node*t=head;
+    while(t->next!=NULL){
+    t=t->next;
+    }
+    t->next=new node(x);
+}
+void print(node*head){
+    if(head==NULL){
+        return;
+    }
+    node*t=head;
+    while(t!=NULL){
+        cout<<t->data<<" ";
+    t=t->next;}
+}
+
+void place(node*&head){
+    node*t=head;
+    node*odd=NULL;
+    node*ev=NULL;
+    while(t!=NULL){
+    if((t->data%2==0)){
+        insertAtend(ev,t->data);
+        
+    }
+    else{
+        insertAtend(odd,t->data);
+    }
+    t=t->next;
+    }
+    if(odd==NULL or ev==NULL ){
+        return;
+    }
+    node*p=odd;
+    while(p->next!=NULL){
+        p=p->next;
+    }
+    p->next=ev;
+    head=odd;
+    
+}
+int main(){
+    node*head=NULL;
+    int l;
+    cin>>l;
+    for(int i=0;i<l;i++){
+        int x;
+        cin>>x;
+        insertAtend(head,x);
+    }
+    place(head);
+    print(head);
+    return 0;
+    
+}

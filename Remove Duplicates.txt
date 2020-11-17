@@ -1,0 +1,27 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+void  str(char *a,int i){
+    if( a[i]=='\0'){
+    return;}
+    
+    if(a[i]==a[i+1]){
+        int j=i;
+    while(a[j]!='\0'){
+        a[j]=a[j+1];
+        j++;
+    }
+	str(a,i);}
+    
+    str(a,i+1);
+    
+    
+}
+  
+int main(){
+    char a[1000];
+    cin>>a;
+    str(a,0);
+    cout<<a<<endl;
+    return 0;
+}

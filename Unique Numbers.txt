@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int a[n];
+    int i=0,x_or=0;
+    while(i<n){
+        cin>>a[i];
+        x_or=x_or^a[i];
+        i++;}
+        int j=0;
+        int k=x_or;
+        while(x_or>0){
+            x_or=x_or>>1;
+            j++;
+        }
+        int no1=0;
+        for(int i=0;i<n;i++){
+        if(((a[i]>>(j-1))&1)>0){
+            no1=no1^a[i];
+        }
+        }
+        int no2=k^no1;
+        cout<<no2<<" "<<no1<<endl;
+        return 0;
+        
+}
